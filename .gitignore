@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+docs/
+inst/doc
+*.tar.gz
+*.Rcheck/
+.DS_Store
+
+# PyCharm / JetBrains
+.idea/

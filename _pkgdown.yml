@@ -1,0 +1,84 @@
+url: https://kristianmiok.github.io/TrustworthySDM/
+
+template:
+  bootstrap: 5
+  bslib:
+    primary:        "#0E4A57"
+    secondary:      "#5E93A0"
+    success:        "#3FA796"
+    warning:        "#E8A33D"
+    danger:         "#D1495B"
+    link-color:     "#0E4A57"
+    link-hover-color: "#D1633A"
+    navbar-bg:      "#0B3F4C"
+    code-color:     "#0B4655"
+    border-radius:  "0.45rem"
+    headings-font-weight: "650"
+  includes:
+    in_header: |
+      <meta name="theme-color" content="#0B3F4C">
+
+navbar:
+  bg: primary
+  type: dark
+  structure:
+    left:  [reference, articles, news]
+    right: [search, github]
+
+home:
+  title: Reliability audits for species distribution models
+  description: >
+    Cleaning occurrence data is a modelling decision. TrustworthySDM measures
+    what it did to the environmental distribution the model learns from, tests
+    whether reweighting can undo it, and says plainly when it cannot.
+  links:
+  - text: Browse source code
+    href: https://github.com/KristianMiok/TrustworthySDM
+  - text: Report a bug
+    href: https://github.com/KristianMiok/TrustworthySDM/issues
+
+reference:
+- title: Audit
+  desc: >
+    Measure what a quality filter did to the environmental distribution of the
+    training data, before any model is fitted.
+  contents:
+  - audit
+  - audit_control
+  - sdm_audit_methods
+
+- title: Corrections
+  desc: >
+    The two defensible corrections. They move the estimated niche in opposite
+    directions and bracket the truth between them, which is the point.
+  contents:
+  - ipw_weights
+  - trust_weights
+
+- title: Adapters
+  desc: >
+    Bridges from the cleaning tools you already use.
+  contents:
+  - as_quality
+
+- title: Simulated data
+  desc: >
+    Occurrence records under four filters, one for each verdict, plus a
+    symmetric outlier screen that mean-shift diagnostics cannot see.
+  contents:
+  - sim_occ
+
+- title: Package
+  contents:
+  - TrustworthySDM-package
+
+articles:
+- title: Articles
+  navbar: ~
+  contents:
+  - getting-started
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with
