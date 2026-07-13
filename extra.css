@@ -1,0 +1,155 @@
+/* TrustworthySDM -- pkgdown theme
+   System font stack only: no webfont fetch, so the site builds offline and
+   renders as SF Pro on macOS, Segoe on Windows. */
+
+:root {
+  --ts-deep:   #0B3F4C;
+  --ts-teal:   #0E4A57;
+  --ts-aqua:   #6FCEC9;
+  --ts-mint:   #CFF2EA;
+  --ts-coral:  #FF8C50;
+  --ts-ink:    #062831;
+  --ts-muted:  #5E7C86;
+  --ts-paper:  #F7FBFA;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  color: var(--ts-ink);
+  background: var(--ts-paper);
+  font-size: 1.02rem;
+  line-height: 1.62;
+}
+
+h1, h2, h3, h4 { color: var(--ts-teal); letter-spacing: -0.012em; }
+h1 { font-weight: 700; }
+h2 {
+  margin-top: 2.4rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid rgba(14, 74, 87, 0.10);
+}
+
+/* ---- navbar --------------------------------------------------------- */
+.navbar {
+  background: linear-gradient(100deg, #14606F 0%, #0B3F4C 55%, #072E38 100%) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 18px rgba(6, 40, 49, 0.16);
+}
+.navbar .navbar-brand { font-weight: 650; letter-spacing: -0.01em; }
+.navbar .nav-link { color: rgba(207, 242, 234, 0.86) !important; }
+.navbar .nav-link:hover,
+.navbar .nav-link.active { color: #fff !important; }
+
+/* ---- the one-line thesis under the title ---------------------------- */
+.template-home .page-header + p > strong:only-child,
+.template-home #trustworthysdm + p > strong:only-child {
+  display: block;
+  font-size: 1.22rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ts-teal);
+  border-left: 4px solid var(--ts-coral);
+  padding: 0.85rem 0 0.85rem 1.1rem;
+  margin: 1.2rem 0 1.8rem;
+  background: linear-gradient(90deg, rgba(111, 206, 201, 0.10), transparent 70%);
+}
+
+/* ---- links ---------------------------------------------------------- */
+a { text-decoration: none; border-bottom: 1px solid rgba(14, 74, 87, 0.22); }
+a:hover { color: #D1633A; border-bottom-color: #D1633A; }
+.navbar a, .page-header a, a.anchor, .sidebar a, a:has(img) { border-bottom: none; }
+
+/* ---- code ----------------------------------------------------------- */
+pre, code {
+  font-family: "JetBrains Mono", "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 0.88em;
+}
+div.sourceCode, pre {
+  background: #072E38;
+  color: #DCEFEA;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 1.15rem;
+  box-shadow: 0 2px 14px rgba(6, 40, 49, 0.14);
+}
+div.sourceCode pre { background: transparent; box-shadow: none; padding: 0; }
+pre code { color: inherit; }
+code:not(pre code) {
+  background: rgba(111, 206, 201, 0.16);
+  color: #0B4655;
+  padding: 0.10em 0.36em;
+  border-radius: 0.28rem;
+}
+/* the verdict block in the README is plain output, not code to be run */
+pre:not(.sourceCode) { background: #0B3F4C; }
+
+/* ---- tables --------------------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(6, 40, 49, 0.08);
+}
+th {
+  background: var(--ts-teal);
+  color: var(--ts-mint);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.66rem 0.9rem;
+  font-size: 0.92rem;
+}
+td {
+  padding: 0.62rem 0.9rem;
+  border-top: 1px solid rgba(14, 74, 87, 0.09);
+  vertical-align: top;
+}
+tbody tr:hover { background: rgba(111, 206, 201, 0.08); }
+
+/* ---- verdict pills, written inline in prose as `benign` etc. -------- */
+strong:is(:has(+ text), *) { }
+
+/* ---- figures -------------------------------------------------------- */
+img { max-width: 100%; }
+.template-home img[src*="README-"] {
+  border-radius: 0.6rem;
+  box-shadow: 0 3px 20px rgba(6, 40, 49, 0.13);
+  margin: 1.4rem 0 0.6rem;
+}
+.template-home img[src*="logo"] { box-shadow: none; margin-left: 1.5rem; }
+
+/* ---- reference index ------------------------------------------------ */
+.template-reference-index .section h2 { border-bottom: none; color: var(--ts-teal); }
+.template-reference-index .ref-index tbody tr:hover { background: rgba(111, 206, 201, 0.10); }
+
+/* ---- sidebar -------------------------------------------------------- */
+.pkgdown-sidebar h2 {
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ts-muted);
+  border-bottom: none;
+  margin-top: 1.6rem;
+}
+#pkgdown-sidebar .list-unstyled li { margin-bottom: 0.3rem; }
+
+/* ---- footer --------------------------------------------------------- */
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(14, 74, 87, 0.12);
+  color: var(--ts-muted);
+  font-size: 0.9rem;
+}
+
+/* ---- blockquotes ---------------------------------------------------- */
+blockquote {
+  border-left: 3px solid var(--ts-aqua);
+  background: rgba(111, 206, 201, 0.07);
+  padding: 0.8rem 1.1rem;
+  margin: 1.4rem 0;
+  color: var(--ts-teal);
+}
