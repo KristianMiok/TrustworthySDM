@@ -10,3 +10,7 @@ inst/doc
 
 # PyCharm / JetBrains
 .idea/
+
+# Python
+__pycache__/
+*.pyc

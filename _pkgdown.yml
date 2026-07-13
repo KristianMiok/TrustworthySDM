@@ -31,11 +31,6 @@ home:
     Cleaning occurrence data is a modelling decision. TrustworthySDM measures
     what it did to the environmental distribution the model learns from, tests
     whether reweighting can undo it, and says plainly when it cannot.
-  links:
-  - text: Browse source code
-    href: https://github.com/KristianMiok/TrustworthySDM
-  - text: Report a bug
-    href: https://github.com/KristianMiok/TrustworthySDM/issues
 
 reference:
 - title: Audit

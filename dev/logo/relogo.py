@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 import hexgen as HX
 import crayfish as CF
 
-VARIANT = "D"          # <-- change to A, B or C to swap the design
+VARIANT = "B"          # <-- change to A, B or C to swap the design
 W, H, CX = HX.W, HX.H, HX.CX
 
 WORDMARK = zlib.decompress(base64.b64decode(
